@@ -75,3 +75,12 @@ nav.navbar{
     }
   }
 }
+
+section.contentWrapper{
+  max-width: 1000px;
+  margin: auto;
+  
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
