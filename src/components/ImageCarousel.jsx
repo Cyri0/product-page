@@ -5,7 +5,6 @@ const ImageCarousel = () => {
   const [currentIdx, setCurrentIdx] = useState(0)
 
   useEffect(()=>{
-
     const intervalId = setInterval(()=>{     
       setCurrentIdx(prev => (prev + 1) % images.length)
     },5000)
@@ -20,6 +19,7 @@ const ImageCarousel = () => {
         <div className="imageSelector">
         {   images.map((image, idx) => 
             <button 
+                key={image}
                 disabled={idx === currentIdx} 
                 onClick={()=>setCurrentIdx(idx)} 
             >
