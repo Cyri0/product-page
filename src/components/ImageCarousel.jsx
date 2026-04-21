@@ -1,8 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const ImageCarousel = () => {
   const images = ["image-product-1","image-product-2","image-product-3","image-product-4"]
   const [currentIdx, setCurrentIdx] = useState(0)
+
+  useEffect(()=>{
+
+    const intervalId = setInterval(()=>{     
+      setCurrentIdx(prev => (prev + 1) % images.length)
+    },5000)
+
+    return () => clearInterval(intervalId)
+  },[])
 
   return (
     <div className="imageCarousel">
